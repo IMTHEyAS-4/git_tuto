@@ -37,3 +37,67 @@ git merge feature/demo
 
 # View all branches
 git branch -a
+
+# Basic pull (fetch + merge)
+git pull
+
+# Pull with rebase instead of merge
+git pull --rebase
+
+# Pull from specific remote/branch
+git pull origin main
+
+# Pull without merging (fetch only)
+git fetch
+
+# Pull and see changes before applying
+git fetch && git log HEAD..origin/main
+
+
+# Rebase current branch onto main
+git rebase main
+
+# Interactive rebase (squash, reword commits)
+git rebase -i HEAD~3
+
+# Stash changes temporarily
+git stash
+git stash pop
+git stash list
+
+# Cherry-pick specific commit
+git cherry-pick <commit-hash>
+
+# Undo last commit (keep changes)
+git reset --soft HEAD~1
+
+# Undo last commit (discard changes)
+git reset --hard HEAD~1
+
+# View detailed commit history with branches
+git log --graph --oneline --all
+
+# Find commits by message
+git log --grep="keyword"
+
+# Amend last commit
+git commit --amend
+
+# Create and switch to branch
+git checkout -b feature/new-feature
+
+# Rename branch
+git branch -m old-name new-name
+
+# Delete branch
+git branch -d feature/name
+
+# Force push (use carefully!)
+git push --force-with-lease
+
+# See differences between branches
+git diff main feature/branch
+
+# Tag a commit
+git tag v1.0.0
+git push origin v1.0.0
